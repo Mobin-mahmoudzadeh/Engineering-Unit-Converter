@@ -29,4 +29,14 @@ public class TemperatureConverter
         }
         return kelvin - 273.15;
     }
+
+    public double ConvertCelsiusToKelvin(double celsius)
+    {
+        if (celsius < -273.15)
+        {
+            throw new ArgumentOutOfRangeException(nameof(celsius), "Temperature cannot be below absolute zero (-273.15°C).");
+        }
+
+        return celsius + 273.15;
+    }
 }
