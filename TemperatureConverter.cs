@@ -20,4 +20,13 @@ public class TemperatureConverter
         }
         return (fahrenheit - 32) * 5 / 9;
     }
+
+    public double ConvertKelvinToCelsius(double kelvin)
+    {
+        if (kelvin < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(kelvin), "Temperature cannot be below absolute zero (0 K).");
+        }
+        return kelvin - 273.15;
+    }
 }
